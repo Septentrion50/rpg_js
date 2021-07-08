@@ -38,11 +38,13 @@ class Turn {
     play() {
         let attacker = this.choosePlayer();
         let target = prompt("Who is your target? \n");
-        let blowType = prompt("What type of attack do you want to use? \n");
+        let blowType = prompt("What type of attack do you want to use? \n1: Normal\n2: Special\n");
         if (blowType === "1") {
-            attacker.dealDamage(target);
+            attacker.dealDamage(this.charLefttarget);
         } else if (blowType === "2"){
             attacker.specialAttack(target);
+        } else {
+            console.log("Please enter either 1 or 2.");
         };
     };
 };
